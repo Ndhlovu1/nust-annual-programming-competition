@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
+whitenoise = {extras = ["brotli"], version = "*"}
+gunicorn = "*"
+uvicorn = "*"
+django-rest-framework = "*"
+django-allauth = "*"
+django-simple-history = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
