@@ -13,8 +13,3 @@ uvicorn = "*"
 django-rest-framework = "*"
 django-allauth = "*"
 django-simple-history = "*"
-
-[dev-packages]
-
-[requires]
-python_version = "3.10"
