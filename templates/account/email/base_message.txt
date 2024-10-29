@@ -1,4 +1,4 @@
-{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Hello from {{ domain }}!{% endblocktrans %}
+{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Hello from {{ display_name }}!{% endblocktrans %}
 
 {% block content %}{% endblock content %}
 
