@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+admin.site.site_header = "SCA | ITS ADMINISTRATION"
+admin.site.site_title = "SCA"
+admin.site.index_title = "ITS MANAGEMENT SYSTEM"
+
 urlpatterns = [
     path('account/', include('allauth.urls')),  # Adds allauth's URL routes
     path('admin/', admin.site.urls),
