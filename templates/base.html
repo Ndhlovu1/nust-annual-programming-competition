@@ -9,6 +9,9 @@
 
     <title>{% block title %}{% endblock %} | NAPC COMMUNITY</title>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     
@@ -24,6 +27,10 @@
 
     <!-- Navbar -->
     {% include "partials/_navbar.html" %}
+    <hr/>
+
+     <!-- Header -->
+    {% include "partials/_header.html" %}
 
     <!-- Main Content with Responsive Container -->
     <main class="container-fluid mt-4">

@@ -1,10 +1,35 @@
 {% extends "../base.html" %}
 
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="text-center mt-5">
-    <h1>NUST PROGRAMMING COMPETITION COMMUNITY</h1>
-    <p>Welcome to the Namibia University of Science & Techonlogy's Progamming Comppetion Community</p>
-</div>
+    <div class="container text-center mt-5">
+        <h1> <u>Nust Annual Programming Competition 2024 Is Proudly Sponsored By! <u/></h1>
+        {% comment %} <p>
+            OUR APPRECIATION FOR OUR SPONSORS
+        </p> {% endcomment %}
+        <a href="https://www.linkedin.com/in/tinomudaishe-ndhlovu/" target="_blank" class="btn btn-outline-primary btn-lg hover">PAST SPONSORS!</a>
+
+    </div>
+
+    <!-- Sponsor Gallery -->
+    <div class="container mt-5">
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4"> <!-- 4 in a row for large screens -->
+                <img src="{% static 'img/sponsors/mtc.png' %}" class="img-fluid" alt="Sponsor 1" style="max-height: 200px;">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4">
+                <img src="{% static 'img/sponsors/shine_tech.jpeg' %}" class="img-fluid" alt="Sponsor 2" style="max-height: 200px;">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4">
+                <img src="{% static 'img/sponsors/telecom2.png' %}" class="img-fluid" alt="Sponsor 3" style="max-height: 200px;">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 mb-4">
+                <img src="{% static 'img/sponsors/blue_sky.png' %}" class="img-fluid" alt="Sponsor 4" style="max-height: 200px;">
+            </div>
+            
+        </div>
+    </div>
+
 {% endblock %}
