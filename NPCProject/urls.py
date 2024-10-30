@@ -25,4 +25,5 @@ admin.site.index_title = "NPCC MANAGEMENT SYSTEM"
 urlpatterns = [
     path('account/', include('allauth.urls')),  # Adds allauth's URL routes
     path('admin/', admin.site.urls),
+    path('',include('landingApp.urls')),
 ]
