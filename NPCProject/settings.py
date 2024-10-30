@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',  # Add this if using social login
+    'noticeBoardApp',
 
     # Social account providers (uncomment if needed)
     # 'allauth.socialaccount.providers.google',

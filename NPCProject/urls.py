@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-admin.site.site_header = "SCA | ITS ADMINISTRATION"
-admin.site.site_title = "SCA"
-admin.site.index_title = "ITS MANAGEMENT SYSTEM"
+admin.site.site_header = "NPC | COMMUNITY ADMINISTRATION"
+admin.site.site_title = "NUST PROGRAMMING COMPETITION COMMUNITY"
+admin.site.index_title = "NPCC MANAGEMENT SYSTEM"
 
 urlpatterns = [
     path('account/', include('allauth.urls')),  # Adds allauth's URL routes
     path('admin/', admin.site.urls),
+    path('/',include("noticeBoard.urls")),
 ]
