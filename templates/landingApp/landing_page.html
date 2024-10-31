@@ -5,12 +5,11 @@
 
 {% block content %}
     <div class="container text-center mt-5">
-        <center><h1> <u>Nust Annual Programming Competition 2024 Is Proudly Sponsored By! <u/></h1><center>
+        <center><h1> <u>Proudly Sponsored By! </u></h1><center>
         {% comment %} <p>
             OUR APPRECIATION FOR OUR SPONSORS
         </p> {% endcomment %}
     </div>
-
     <!-- Sponsor Gallery -->
     <div class="container mt-5">
         <div class="row mt-4">
@@ -32,58 +31,70 @@
 
     </div>
 
+
+    <center><h1> <u>Platform Features </u></h1><center>
+
     <!-- LIST OF FEATURES FOUND ON SITE -->
     <div class="row">
-            <!-- 2024 Events Section -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h2 class="h4 m-0">2024 Events</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Event Title</h3>
-                        <p><strong>Date:</strong> March 10, 2024</p>
-                        <p><strong>Location:</strong> Virtual</p>
-                        <p><strong>Description:</strong> A hackathon focusing on AI applications in healthcare.</p>
-                        <p><strong>Registration Link:</strong> <a href="#">Register Here</a></p>
-                        <p><strong>Top Prizes:</strong> $1000 for 1st, $500 for 2nd, $250 for 3rd</p>
-                    </div>
+        <!-- 2024 Events Section -->
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card" style="box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 m-0">Blogging</h2>
                 </div>
-            </div>
-
-            <!-- 2023 Events Section -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h2 class="h4 m-0">2023 Events</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Event Title</h3>
-                        <p><strong>Date:</strong> June 15, 2023</p>
-                        <p><strong>Location:</strong> New York City, NY</p>
-                        <p><strong>Description:</strong> Hackathon dedicated to blockchain-based solutions.</p>
-                        <p><strong>Registration Link:</strong> <a href="#">Register Here</a></p>
-                        <p><strong>Top Prizes:</strong> $2000 for 1st, $1000 for 2nd, $500 for 3rd</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2022 Events Section -->
-            <div class="col-12 col-md-4 mb-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h2 class="h4 m-0">2022 Events</h2>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Event Title</h3>
-                        <p><strong>Date:</strong> April 21, 2022</p>
-                        <p><strong>Location:</strong> San Francisco, CA</p>
-                        <p><strong>Description:</strong> A hackathon aimed at sustainable technology solutions.</p>
-                        <p><strong>Registration Link:</strong> <a href="#">Register Here</a></p>
-                        <p><strong>Top Prizes:</strong> $1500 for 1st, $750 for 2nd, $300 for 3rd</p>
-                    </div>
+                <div class="card-body">
+                    <h3 class="card-title">Access to Top Knowledge</h3>
+                    <p><strong>Info:</strong> This platform allows you to quickly create and share articles. This will also allow you to easily see upcoming changes</p>
+                    <p><strong>Registration Link:</strong> <a href="#">Register Here</a></p>
                 </div>
             </div>
         </div>
+
+        <!-- 2023 Events Section -->
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card" style="box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 m-0">Communication</h2>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Easy In-built Communication</h3>
+                    <p><strong>Info:</strong> This platform allows you to gain a mentor and communicate directly with fellow members.</p>
+                    <p><strong>Registration Link:</strong> <a href="#">Register Here</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2022 Events Section -->
+        <div class="col-12 col-md-4 mb-4">
+            <div class="card" style="box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.3);">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 m-0">Stack Answers</h2>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">QnA</h3>
+                    <p><strong>Info:</strong> This platform allows you to access information by having your questions upvoted.</p>
+                    <p><strong>Registration Link:</strong> <a href="#">Register Here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if user.is_authenticated %}
+
+    {% else %}
+        <!-- Sign In / Sign Up Card -->
+        <div class="container mt-5 d-flex justify-content-center">
+            <div class="card p-4" style="width: 350px; box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);">
+                <div class="card-body text-center">
+                    <h3 class="card-title mb-4">Welcome Back!</h3>
+                    <p class="mb-4">Sign in or sign up to access all features of our platform.</p>
+                    <a href="{% url 'account_login' %}" class="btn btn-primary btn-lg btn-block mb-3">Sign In</a>
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-primary btn-lg btn-block">Sign Up</a>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
 
 {% endblock %}
