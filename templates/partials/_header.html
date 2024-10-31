@@ -1,27 +1,54 @@
 {% load static %}
 
 <div class="container-fluid p-5 text-center bg-image"
-     style="
-     background-image: url('{% static 'img/bg/bg_01.png' %}'); 
-     height: 800px;
-     background-size: cover; /* Ensures the background covers the entire area */
-     background-position: center; /* Center the background image */
-     background-attachment: fixed;">
+    {% if user.is_authenticated %}
+
+        style="
+            background-image: url('{% static 'img/bg/nust_ca.jpg' %}'); 
+            height: 800px;
+            background-size: cover; /* Ensures the background covers the entire area */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed;">
+    
+    {% else %}
+        style="
+            background-image: url('{% static 'img/bg/bg_01.png' %}'); 
+            height: 800px;
+            background-size: cover; /* Ensures the background covers the entire area */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed;">
+
+    {% endif %}
+     
     
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);"> <!-- Darker mask -->
 
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">NUST ANNUAL PROGRAMMING COMPETITION COMMUNITY</h1>
-                <h2 class="mb-3">WHO WE ARE!</h2>  
-                <div>
-                    <p class="lead" style="font-weight: 800;">
-                        Welcome to the Annual Programming Competition Community, proudly organized by the Faculty of Computing and Informatics (FCI) at NUST!<br/> 
-                        This exhilarating event is designed to ignite your passion for coding and foster a spirit of innovation among aspiring programmers.
-                        
-                    </p>
-                </div> 
-                <a href="https://www.linkedin.com/in/tinomudaishe-ndhlovu/" target="_blank" class="btn btn-info btn-lg hover">JOIN COMMUNITY!</a>
+             {% if user.is_authenticated %}
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">WELCOME!</h1>
+
+                    <div>
+                        <h3 class="fs-3" style="font-weight: 1200px;">
+                            Whether you're a seasoned coder or just starting, this platform promises fun, challenge, and inspiration.<br/>
+                            Connect with fellow tech enthusiasts, tackle exciting challenges, and let your talent shine!
+                        </h3>
+                    </div> 
+                {% else %}
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">NUST ANNUAL PROGRAMMING COMPETITION COMMUNITY</h1>
+              
+                    <h2 class="mb-3">WHO WE ARE!</h2>  
+                    <div>
+                        <p class="lead" style="font-weight: 800;">
+                            Welcome to the Annual Programming Competition Community, proudly organized by the Faculty of Computing and Informatics (FCI) at NUST!<br/> 
+                            This exhilarating event is designed to ignite your passion for coding and foster a spirit of innovation among aspiring programmers.
+                            
+                        </p>
+                    </div> 
+                    <a href="https://www.linkedin.com/in/tinomudaishe-ndhlovu/" target="_blank" class="btn btn-info btn-lg hover">JOIN COMMUNITY!</a>
+                {% endif %}
+            
+            
             </div>
         </div>            
 
