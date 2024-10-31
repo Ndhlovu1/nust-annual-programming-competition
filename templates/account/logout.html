@@ -1,25 +1,40 @@
 {% extends "account/base_manage.html" %}
 {% load allauth i18n %}
+
 {% block head_title %}
     {% trans "Sign Out" %}
 {% endblock head_title %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-        {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-        {% slot body %}
-            {% csrf_token %}
-            {{ redirect_field }}
-        {% endslot %}
-        {% slot actions %}
-            {% element button type="submit" %}
-                {% trans 'Sign Out' %}
-            {% endelement %}
-        {% endslot %}
-    {% endelement %}
+    <!-- Centered Card Container -->
+    <div class="container d-flex justify-content-center mt-5">
+        <!-- Card Wrapper with strong shadow -->
+        <div class="card p-4" style="width: 400px; box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);">
+            <div class="card-body">
+                <!-- Card Title -->
+                <h2 class="card-title text-center text-primary mb-4">{% trans "Sign Out" %}</h2>
+                
+                <!-- Confirmation Message -->
+                <p class="text-muted text-center">
+                    {% trans 'Are you sure you want to sign out?' %}
+                </p>
+
+                <!-- Sign Out Form -->
+                {% url 'account_logout' as action_url %}
+                {% element form method="post" action=action_url no_visible_fields=True %}
+                    {% slot body %}
+                        {% csrf_token %}
+                        {{ redirect_field }}
+                    {% endslot %}
+                    {% slot actions %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                {% trans 'Sign Out' %}
+                            </button>
+                        </div>
+                    {% endslot %}
+                {% endelement %}
+            </div>
+        </div>
+    </div>
 {% endblock content %}

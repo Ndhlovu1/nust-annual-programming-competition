@@ -1,7 +1,72 @@
-{% load i18n %}{% autoescape off %}{% blocktrans with site_name=current_site.name %}Hello from {{ display_name }}!{% endblocktrans %}
+{% load i18n %}
+{% autoescape off %}
 
-{% block content %}{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #007bff;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
 
-{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you for using {{ site_name }}!
-{{ site_domain }}{% endblocktrans %}
+    <div class="container">
+        <div class="header">
+            <img src="{% static 'img/logos/logo_trans.png' %}" alt="{{ current_site.name }} Logo">
+            <h1>{{ current_site.name }}</h1>
+        </div>
+
+        <div class="content">
+            {% blocktrans with site_name=current_site.name %}
+            Hello from {{ display_name }}!
+            {% endblocktrans %}
+            
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <div class="footer">
+            {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+            Thank you for using {{ site_name }}!<br>
+            {{ site_domain }}
+            {% endblocktrans %}
+        </div>
+    </div>
+
+</body>
+</html>
+
 {% endautoescape %}
