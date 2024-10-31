@@ -4,7 +4,102 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <div class="container text-center mt-5">
+
+    {% if user.is_authenticated %}
+
+    <center><h1> <u><>HAPPY CODING<</>></u></h1><center>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Forum Card -->
+            <div class="col-md-4 mb-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-comments fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Forum</h5>
+                            <p class="card-text">Join discussions, ask questions, and connect with others on various topics.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Archives Card -->
+            <div class="col-md-4 mb-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-archive fa-3x mb-3 text-success"></i>
+                            <h5 class="card-title">Archives</h5>
+                            <p class="card-text">Browse past content and resources available for reference and learning.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Polls Card -->
+            <div class="col-md-4 mb-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-poll-h fa-3x mb-3 text-warning"></i>
+                            <h5 class="card-title">Polls</h5>
+                            <p class="card-text">Participate in surveys, share your views, and help shape our community.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Mentorship Card -->
+            <div class="col-md-4 mb-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-handshake fa-3x mb-3 text-danger"></i>
+                            <h5 class="card-title">Mentorship</h5>
+                            <p class="card-text">Connect with mentors for guidance, support, and personal growth.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Library Card -->
+            <div class="col-md-4 mb-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x mb-3 text-info"></i>
+                            <h5 class="card-title">Library</h5>
+                            <p class="card-text">Access a collection of articles, ebooks, and other resources for learning.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Resources Card -->
+            <div class="col-md-4 mb-4">
+                <a href="#" class="text-decoration-none">
+                    <div class="card card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-toolbox fa-3x mb-3 text-secondary"></i>
+                            <h5 class="card-title">Resources</h5>
+                            <p class="card-text">Discover tools, templates, and materials to aid your journey.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    {% else %}
+
+        <div class="container text-center mt-5">
+
+
         <center><h1> <u>Proudly Sponsored By! </u></h1><center>
         {% comment %} <p>
             OUR APPRECIATION FOR OUR SPONSORS
@@ -79,20 +174,8 @@
         </div>
     </div>
 
-    {% if user.is_authenticated %}
-
-    {% else %}
-        <!-- Sign In / Sign Up Card -->
-        <div class="container mt-5 d-flex justify-content-center">
-            <div class="card p-4" style="width: 350px; box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);">
-                <div class="card-body text-center">
-                    <h3 class="card-title mb-4">Welcome Back!</h3>
-                    <p class="mb-4">Sign in or sign up to access all features of our platform.</p>
-                    <a href="{% url 'account_login' %}" class="btn btn-primary btn-lg btn-block mb-3">Sign In</a>
-                    <a href="{% url 'account_signup' %}" class="btn btn-outline-primary btn-lg btn-block">Sign Up</a>
-                </div>
-            </div>
-        </div>
+  
+       
 
     {% endif %}
 
