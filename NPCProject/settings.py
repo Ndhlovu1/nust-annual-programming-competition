@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',  # Required for django-allauth
+    'django.contrib.sites',  # Required for django-allauth, and commenting
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',  # Add this if using social login
 
     # Application Apps
-    'noticeBoardApp',
     'landingApp',
+    'announcementsApp', # This will be the loggedIn User's dashboards
 
     ## FUTURE IMPLEMENTATION
     # Social account providers (uncomment if needed)

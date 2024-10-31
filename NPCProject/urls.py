@@ -26,4 +26,5 @@ urlpatterns = [
     path('account/', include('allauth.urls')),  # Adds allauth's URL routes
     path('admin/', admin.site.urls),
     path('',include('landingApp.urls')),
+    path('announcements/',include('announcementsApp.urls')),
 ]

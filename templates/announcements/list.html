@@ -1,0 +1,60 @@
+<!-- templates/announcements/list.html -->
+{% extends "../base.html" %}
+
+{% load static %}
+{% block title %}Announcements{% endblock %}
+
+{% block content %}
+<h2>Announcements</h2>
+
+<div class="row">
+    {% for announcement in announcements %}
+        <div class="col-md-4">  <!-- Bootstrap grid for three columns -->
+            <div class="card mb-4 border">
+                <div class="card-body">
+                    <h4 class="card-title">{{ announcement.title }}</h4>
+                    <p class="card-text">{{ announcement.info }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">Posted by: {{ announcement.user.username }} on {{ announcement.created_at }}</small>
+                    </p>
+
+                    <!-- Like button with counter -->
+                    <p>
+                        Likes: {{ announcement.likes.count }}
+                        <form method="post" action="{% url 'announcementsApp:like_announcement' announcement.pk %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-link p-0">
+                                {% if request.user in announcement.likes.all %}
+                                    <i class="fas fa-heart" style="color: red;"></i> Unlike
+                                {% else %}
+                                    <i class="far fa-heart"></i> Like
+                                {% endif %}
+                            </button>
+                        </form>
+                    </p>
+
+                    <!-- Comments section -->
+                    <p><strong>Comments:</strong></p>
+                    {% for comment in announcement.comments.all %}
+                        <div style="margin-left: 20px;">
+                            <p>{{ comment.comment }} - <em>by {{ comment.user.username }} on {{ comment.created_at }}</em></p>
+                        </div>
+                    {% empty %}
+                        <p>No comments yet.</p>
+                    {% endfor %}
+
+                    <!-- Comment form -->
+                    <form method="post" action="{% url 'announcementsApp:add_comment' announcement.pk %}">
+                        {% csrf_token %}
+                        {{ comment_form.as_p }}
+                        <button type="submit" class="btn btn-primary">Add Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p>No announcements available.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- templates/admin/send_email.html -->
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Send Email to Selected Users</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="{{ form.users.id_for_label }}">{{ form.users.label }}</label><br>
+        {{ form.users }}<br>
+    </div>
+    <button type="submit" name="send">Send Email</button>
+</form>
+
+<a href="{% url 'admin:announcementsApp_announcement_changelist' %}">Back to announcements</a>
+{% endblock %}
