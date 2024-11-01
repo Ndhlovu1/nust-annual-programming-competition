@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'taggit', # Tags Manager
     'galleryApp',
     'archivesApp',
-    'pollsApp',
+    'polsApp',
 
 ]
 

@@ -1,0 +1,7 @@
+<!-- polls/templates/polls/poll_vote.html -->
+<h1>Vote for: {{ poll.question }}</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="choice" required>
+    <button type="submit">Submit Vote</button>
+</form>
