@@ -1,0 +1,10 @@
+<form method="post">
+    {% csrf_token %}
+    <h2>Send Mass Message</h2>
+    <textarea name="content" placeholder="Type your message here..." required></textarea>
+    <h3>Select Recipients:</h3>
+    {% for user in users %}
+        <input type="checkbox" name="recipients" value="{{ user.id }}">{{ user.username }}<br>
+    {% endfor %}
+    <button type="submit">Send Message</button>
+</form>

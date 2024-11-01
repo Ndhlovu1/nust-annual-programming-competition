@@ -44,8 +44,13 @@
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="font-size: 1.5rem;" title="Messages">
+                        <a class="nav-link" href="{% url 'messagesApp:inbox' %}" style="font-size: 1.5rem;" title="Messages">
                             <i class="fas fa-comment-dots message-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'messagesApp:notifications' %}" style="font-size: 1.5rem;" title="Notifications">
+                            <i class="fas fa-bell notifications-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -92,6 +97,10 @@
     /* Custom icon colors */
     .message-icon {
         color: #28a745; /* Green for messages */
+    }
+
+    .notifications-icon {
+        color: #ffc107; /* Yellow for notifications */
     }
 
     .profile-icon {

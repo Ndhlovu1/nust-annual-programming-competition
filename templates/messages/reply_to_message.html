@@ -1,0 +1,23 @@
+{% extends "../base.html" %}
+
+{% load static %}
+{% block title %}Reply to {{ message.sender.username }}{% endblock %}
+
+{% block content %}
+<!-- Include MDBootstrap and Font Awesome styles -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+
+<h2 class="my-4">Reply to {{ message.sender.username }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-outline mb-4">
+        <textarea name="content" class="form-control" placeholder="Type your reply here..." required rows="5"></textarea>
+        <label class="form-label" for="content">Message</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Reply</button>
+</form>
+<a href="{% url 'messagesApp:inbox' %}" class="btn btn-outline-secondary mt-3">Back to Inbox</a>
+
+{% endblock %}

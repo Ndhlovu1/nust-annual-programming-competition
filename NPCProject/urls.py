@@ -34,6 +34,7 @@ urlpatterns = [
     path('polls/',include('polsApp.urls')),
     path('events/', include('eventsApp.urls')),
     path('chat/', include('chatBotApp.urls')),
+    path('messages/',include('messagesApp.urls')),
 ]
 
 if settings.DEBUG:

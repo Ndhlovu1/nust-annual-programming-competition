@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'polsApp',
     'eventsApp',
     'chatBotApp',
+    'messagesApp',
 
 ]
 
