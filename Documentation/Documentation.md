@@ -143,6 +143,30 @@ Incorporated user stories into the design process to ensure the software meets t
 We developed several paper sketches that allowed for the application's user interface to be easily developed
 **PROJECT PAPER SKETCHES**
 
+![WhatsApp Image 2024-11-01 at 16 08 43](https://github.com/user-attachments/assets/471dad53-d473-4b02-94f6-f489374e8ed6)
+
+![WhatsApp Image 2024-11-01 at 16 08 42](https://github.com/user-attachments/assets/0fe20c61-4bca-4a47-9825-62c8d690875d)
+
+![WhatsApp Image 2024-11-01 at 16 08 42 (1)](https://github.com/user-attachments/assets/9805b663-bfbb-44f0-8f0e-0a6c25f5ea78)
+
+![WhatsApp Image 2024-11-01 at 16 08 42](https://github.com/user-attachments/assets/6d3009bc-92d0-47d3-ac41-4a72c8803d13)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
