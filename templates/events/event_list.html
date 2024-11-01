@@ -1,0 +1,10 @@
+{% for event in events %}
+    <h2>{{ event.title }}</h2>
+    <p>{{ event.description }}</p>
+    <p>{{ event.date }} at {{ event.location }}</p>
+    {% if user.is_authenticated %}
+        <a href="{% url 'rsvp_event' event.id %}">RSVP</a>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a> to RSVP</p>
+    {% endif %}
+{% endfor %}

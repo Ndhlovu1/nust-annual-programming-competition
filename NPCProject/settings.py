@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'galleryApp',
     'archivesApp',
     'polsApp',
+    'eventsApp',
 
 ]
 

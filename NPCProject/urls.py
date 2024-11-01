@@ -31,7 +31,8 @@ urlpatterns = [
     path('forum/',include('forumApp.urls')),
     path('gallery/',include('galleryApp.urls')),
     path('archives/',include('archivesApp.urls')),
-     path('polls/',include('polsApp.urls')),
+    path('polls/',include('polsApp.urls')),
+    path('events/', include('eventsApp.urls')),
 ]
 
 if settings.DEBUG:
