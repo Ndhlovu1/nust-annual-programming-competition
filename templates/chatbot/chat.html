@@ -1,0 +1,28 @@
+{% extends "../base.html" %}
+
+{% load static %}
+{% block title %}Jarvis AI{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4"><i class="fas fa-robot"></i> Chat with Jarvis</h1>
+
+    <div class="card shadow p-4">
+        <!-- Chat Form -->
+        <form method="post" class="d-flex flex-column align-items-center">
+            {% csrf_token %}
+            <div class="mb-3 w-75">
+                {{ form.message }}  <!-- Form field with class set in forms.py -->
+            </div>
+            <button type="submit" class="btn btn-primary w-75"><i class="fas fa-paper-plane"></i> Send</button>
+        </form>
+
+        <!-- Chat Response -->
+        {% if response %}
+            <div class="alert alert-info mt-4">
+                <strong><i class="fas fa-robot"></i> Jarvis:</strong> {{ response }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

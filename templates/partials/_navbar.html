@@ -28,9 +28,10 @@
                         <a class="nav-link" href="{% url 'announcementsApp:announcements' %}"  style="font-size: 1.25rem;">Announcements</a>
                     </li>
 
-
-
                 {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="chatBotApp:chat" style="font-size: 1.25rem;">Jarvis</a>
+                </li>
             </ul>
 
                 {% if user.is_authenticated %}
