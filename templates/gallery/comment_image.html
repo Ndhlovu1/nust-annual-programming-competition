@@ -1,0 +1,18 @@
+<!-- gallery/templates/gallery/comment_image.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment on {{ image.title }}</title>
+</head>
+<body>
+    <h1>Comment on {{ image.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Comment</button>
+    </form>
+    <a href="{% url 'gallery:gallery_list' %}">Back to Gallery</a>
+</body>
+</html>

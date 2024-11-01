@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 admin.site.site_header = "NPC | COMMUNITY ADMINISTRATION"
 admin.site.site_title = "NUST PROGRAMMING COMPETITION COMMUNITY"
@@ -28,4 +29,8 @@ urlpatterns = [
     path('',include('landingApp.urls')),
     path('announcements/',include('announcementsApp.urls')),
     path('forum/',include('forumApp.urls')),
+    path('gallery/',include('galleryApp.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
