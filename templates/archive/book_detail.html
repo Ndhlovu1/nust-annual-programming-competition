@@ -1,0 +1,52 @@
+{% extends "../base.html" %}
+
+{% load static %}
+{% block title %}{{ book.title }} - Archives{% endblock %}
+
+{% block content %}
+
+<div class="container my-5 shadow-lg p-4 rounded-4 bg-white">
+    <div class="d-flex justify-content-between mb-4">
+        <a href="{% url 'archivesApp:book_list' %}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Archives
+        </a>
+    </div>
+    
+    <h1 class="text-center mb-4 display-4">{{ book.title }}</h1>
+    <div class="card mb-4 border-light shadow-sm">
+        <div class="card-body">
+            <p class="card-text">{{ book.description }}</p>
+            <p class="fw-bold">Average Rating: <span class="text-warning">{{ book.average_rating|floatformat:1 }}</span> / 5</p>
+
+            {% if user.is_authenticated %}
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="{% url 'archivesApp:download_pdf' book.pk %}" class="btn btn-success btn-lg">
+                        <i class="fas fa-file-download"></i> Download PDF
+                    </a>
+                </div>
+
+                <h2 class="mt-4">Rate this Book</h2>
+                <form method="post" class="mt-3">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="rating" class="form-label">Your Rating:</label>
+                        <select name="rating" id="rating" class="form-select">
+                            <option value="" disabled {% if not user_rating %}selected{% endif %}>Select rating</option>
+                            {% for i in "12345" %}
+                                <option value="{{ i }}" {% if user_rating and user_rating.rating == i|add:'0' %}selected{% endif %}>
+                                    {{ i }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Rating</button>
+                </form>
+            {% else %}
+                <p class="text-danger mt-4">You must be logged in to read or rate this book.</p>
+                <a href="{% url 'account_login' %}" class="btn btn-link">Login to Rate</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
