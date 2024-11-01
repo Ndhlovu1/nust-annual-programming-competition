@@ -81,6 +81,72 @@ Classes:
 
 ![Screenshot from 2024-11-01 16-00-20](https://github.com/user-attachments/assets/c84a6b54-4d27-48dc-a975-5bf72f546347)
 
+## PROBLEM SOLVING AND ANALYSIS
+
+**User Registration and Authentication: A secure system for participants, judges, and organizers to create accounts and manage their profiles.
+Problem Submission and Evaluation: A robust platform for participants to submit their code Steps Taken in Brainstorming Stages:**
+
+1. Ideation Sessions:
+    Encouraged team members to contribute ideas freely, without judgment.
+    Conducted regular brainstorming sessions both in-person and online.
+    Used tools like whiteboards, sticky notes, and online collaboration platforms to capture and organize ideas.
+2. Mind Mapping:
+    Created visual mind maps to explore the relationships and connections between ideas.
+    Identified key themes and patterns that emerged from the brainstorming sessions.
+    Used mind maps to identify potential solutions and areas for further exploration.
+3.  SWOT Analysis:
+    Evaluated the software's strengths, weaknesses, opportunities, and threats.
+    Conducted a competitive analysis to identify potential advantages and disadvantages.
+    Used SWOT analysis to make informed decisions about the software's features and design.
+    
+### User Stories
+We created user stories from the perspective of different stakeholders (participants, judges, organizers).
+Used user stories to understand the needs, goals, and pain points of each stakeholder group.
+Incorporated user stories into the design process to ensure the software meets their requirements.User Stories
+
+1. As a Participant, I want to be able to:
+    Register for the competition and create a profile.
+    View past competitions and their results.
+    Submit my code for evaluation.
+    View the real-time leaderboard and my ranking.
+    Collaborate with other participants using the platform's communication tools.
+    Receive feedback and scores from judges.
+
+2. As a Judge, I want to be able to:
+    Create an account and manage my profile.
+    Evaluate participant submissions and provide feedback.
+    Assign scores to participants based on their performance.
+    View the real-time leaderboard and analyze participant rankings.
+    Communicate with other judges using the platform's collaboration tools.
+
+3. As an Organizer, I want to be able to:
+    Create and manage the competition schedule, rules, and announcements.
+    Broadcast messages to all users or selected groups of users.
+    Manage participant registrations and deregistrations.
+    View reports and analytics on competition participation and performance.
+    Collaborate with other organizers using the platform's communication tools.
+
+4. As a Sponsor, I want to be able to:
+    Create an account and manage my profile.
+    View information about the competition and its participants.
+    Contact organizers and participants through the platform's communication tools.
+    Promote my sponsorship and interact with the competition community.
+
+5. As a Volunteer, I want to be able to:
+    Create an account and manage my profile.
+    View information about the competition and its schedule.
+    Register for volunteer opportunities and manage my availability.
+    Communicate with organizers and other volunteers using the platform's communication tools.
+
+### PROTOTYPING 
+
+We developed several paper sketches that allowed for the application's user interface to be easily developed
+**PROJECT PAPER SKETCHES**
+
+
+
+
+
 
 
 
