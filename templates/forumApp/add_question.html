@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+{% block title %}Add Topic{% endblock %}
+{% block content %}
+<div class="container my-5">
+  <h1 class="text-center mb-4">Add a topic</h1>
+  <form method="post" enctype="multipart/form-data" class="border p-4 rounded bg-light">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary btn-block">
+      <i class="fas fa-paper-plane"></i> Post Your Question
+    </button>
+  </form>
+
+  {% if question %}
+    <div class="alert alert-success mt-4" role="alert">
+      Question added! View it <a href="{% url 'forumApp:question_detail' question.pk %}" class="alert-link">here</a>.
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

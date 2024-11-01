@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Announcement(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,related_name='announcement_comments')
     title = models.CharField(max_length=50, default="")
     info = models.TextField(max_length=250, default="")
     created_at = models.DateTimeField(auto_now_add=True)

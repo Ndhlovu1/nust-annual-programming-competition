@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     # Application Apps
     'landingApp',
     'announcementsApp', # This will be the loggedIn User's dashboards
+    'forumApp',
+
+    'taggit', # Tags Manager
 
     ## FUTURE IMPLEMENTATION
     # Social account providers (uncomment if needed)

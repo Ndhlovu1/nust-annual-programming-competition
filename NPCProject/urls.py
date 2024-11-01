@@ -27,4 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('landingApp.urls')),
     path('announcements/',include('announcementsApp.urls')),
+    path('forum/',include('forumApp.urls')),
 ]

@@ -1,0 +1,55 @@
+<!-- main/templates/main/question_list.html -->
+{% extends "../base.html" %}
+
+{% block title %}Forum{% endblock %}
+{% block content %}
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Questions</h1>
+    <div class="text-right mb-3">
+      <a href="{% url 'forumApp:add_question' %}" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Add a Question
+      </a>
+    </div>
+    <ul class="list-group">
+      {% for question in page_obj %}
+        <li class="list-group-item">
+          <a href="{% url 'forumApp:question_detail' question.pk %}" class="h5 text-dark">{{ question.title }}</a>
+          <p class="text-muted mb-1">Posted by: <strong>{{ question.user.username }}</strong> on {{ question.created_at }}</p>
+          <p class="text-secondary">
+            Tags: 
+            {% for tag in question.tags.all %}
+              <span class="badge badge-light">{{ tag.name }}</span>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Pagination controls -->
+    <nav aria-label="Page navigation" class="mt-4">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page=1">&laquo; First</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+          </li>
+        {% endif %}
+
+        <li class="page-item disabled">
+          <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        </li>
+
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+{% endblock %}
