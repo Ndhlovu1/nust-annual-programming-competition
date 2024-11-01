@@ -53,6 +53,7 @@ INSTALLED_APPS = [
 
     'taggit', # Tags Manager
     'galleryApp',
+    'archivesApp',
 
     ## FUTURE IMPLEMENTATION
     # Social account providers (uncomment if needed)

@@ -30,6 +30,7 @@ urlpatterns = [
     path('announcements/',include('announcementsApp.urls')),
     path('forum/',include('forumApp.urls')),
     path('gallery/',include('galleryApp.urls')),
+    path('archives/',include('archivesApp.urls')),
 ]
 
 if settings.DEBUG:
