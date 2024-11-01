@@ -16,8 +16,8 @@ class Event(models.Model):
         attendees = self.rsvp_set.values_list('user__email', flat=True)
         send_mail(
             subject=f"Update for {self.title}",
-            message="Hello, here's an update on the event.",
-            from_email="admin@example.com",
+            message="Good day, <br/> This is your reminder to attend the <b>{title}</b><br/><br/>{description}",
+            from_email="tinomudaishendhlovu@gmail.com",
             recipient_list=attendees,
         )
 
