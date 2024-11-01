@@ -151,6 +151,10 @@ We developed several paper sketches that allowed for the application's user inte
 
 ![WhatsApp Image 2024-11-01 at 16 08 42](https://github.com/user-attachments/assets/6d3009bc-92d0-47d3-ac41-4a72c8803d13)
 
+## CONCLUSION
+
+This documentation serves as a starting point for the development of the Nust Annual Programming Competition software. As the project progresses, this document will be updated to reflect new features, design decisions, and implementation details. We are committed to creating a high-quality software platform that supports the goals of the competition and provides a positive experience for all participants.
+
 
 
 
