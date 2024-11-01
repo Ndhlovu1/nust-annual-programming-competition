@@ -16,4 +16,4 @@ def rsvp_event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     RSVP.objects.get_or_create(event=event, user=request.user)
     messages.success(request, f"You have successfully RSVP'd to {event.title}.")
-    return redirect('event_list')
+    return redirect('eventsApp:event_list')
