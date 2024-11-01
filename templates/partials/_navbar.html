@@ -45,17 +45,17 @@
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="#" style="font-size: 1.5rem;" title="Messages">
-                            <i class="fas fa-comment-dots"></i>
+                            <i class="fas fa-comment-dots message-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" style="font-size: 1.5rem;" title="Profile">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user profile-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}" style="font-size: 1.5rem;" title="Logout">
-                            <i class="fas fa-sign-out-alt"></i>
+                            <i class="fas fa-sign-out-alt logout-icon"></i>
                         </a>
                     </li>
                 {% else %}
@@ -87,5 +87,18 @@
     }
     .navbar-toggler {
         border-color: rgba(0, 0, 0, 0.1); /* Slightly darker border for toggler */
+    }
+
+    /* Custom icon colors */
+    .message-icon {
+        color: #28a745; /* Green for messages */
+    }
+
+    .profile-icon {
+        color: #007bff; /* Blue for profile */
+    }
+
+    .logout-icon {
+        color: #dc3545; /* Red for logout */
     }
 </style>
