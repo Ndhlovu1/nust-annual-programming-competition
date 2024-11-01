@@ -54,12 +54,8 @@ INSTALLED_APPS = [
     'taggit', # Tags Manager
     'galleryApp',
     'archivesApp',
+    'pollsApp',
 
-    ## FUTURE IMPLEMENTATION
-    # Social account providers (uncomment if needed)
-    # 'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
-    # Add other social providers here as needed
 ]
 
 MIDDLEWARE = [
