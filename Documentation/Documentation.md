@@ -77,6 +77,9 @@ Classes:
         Attributes: tag_name, content_type
         Methods: add_tag(), remove_tag(), list_tags()
 
+**UML DIAGRAM BASED ON THE ABOVE CLASSES**
+
+![Screenshot from 2024-11-01 16-00-20](https://github.com/user-attachments/assets/c84a6b54-4d27-48dc-a975-5bf72f546347)
 
 
 
