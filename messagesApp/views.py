@@ -119,7 +119,7 @@ def mark_notification_as_read(request, notification_id):
     notification = Notification.objects.get(id=notification_id)
     notification.is_read = True
     notification.save()
-    return redirect('notifications')
+    return redirect('messagesApp:notifications')
 
 @login_required
 def reply_to_message(request, message_id):
