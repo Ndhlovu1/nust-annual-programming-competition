@@ -11,6 +11,7 @@ from .views import (
     notifications,
     mark_notification_as_read,
     reply_to_message,
+    group_list
 )
 
 app_name = "messagesApp"
@@ -23,8 +24,9 @@ urlpatterns = [
     path('group/<int:group_id>/', group_detail, name='group_detail'),
     path('group/<int:group_id>/add_member/', add_member_to_group, name='add_member_to_group'),
     path('group/<int:group_id>/remove_member/', remove_member_from_group, name='remove_member_from_group'),
-    path('mass_message/', mass_message, name='mass_message'),
+    path('mass-message/', mass_message, name='mass_message'),
     path('notifications/', notifications, name='notifications'),
     path('notifications/mark/<int:notification_id>/', mark_notification_as_read, name='mark_notification_as_read'),
-    path('reply/<int:message_id>/', reply_to_message, name='reply_to_message'),  # New reply URL
+    path('reply/<int:message_id>/', reply_to_message, name='reply_to_message'), 
+    path('groups/', group_list, name='groups'), 
 ]

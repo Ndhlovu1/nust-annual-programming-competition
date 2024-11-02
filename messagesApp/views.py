@@ -145,3 +145,11 @@ def reply_to_message(request, message_id):
         return redirect('messagesApp:inbox')  # Redirect back to the inbox
 
     return render(request, 'messages/reply_to_message.html', {'message': original_message})
+
+
+
+@login_required
+def group_list(request):
+    groups = Group.objects.all()
+    return render(request, 'messages/group_list.html', {'groups': groups})
+

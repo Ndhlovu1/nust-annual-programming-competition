@@ -1,0 +1,8 @@
+<h2>Groups</h2>
+<ul>
+    {% for group in groups %}
+        <li>
+            <a href="{% url 'messagesApp:group_detail' group.id %}">{{ group.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
