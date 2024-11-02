@@ -1,59 +1,37 @@
 {% extends "../base.html" %}
 
 {% load static %}
-
 {% block title %}Profile{% endblock %}
 
 {% block content %}
+<!-- Include MDBootstrap CSS and JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
 
-<!-- Profile Page -->
-<div class="container my-5">
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <!-- Profile Header -->
-            <h1 class="mb-4 text-center">
-                <i class="fas fa-user-circle"></i> {{ profile.user.username }}'s Profile
-            </h1>
-            
-            <!-- Profile Info -->
-            <div class="mb-4">
-                <p><i class="fas fa-info-circle"></i> Bio: {{ profile.bio }}</p>
-                <p><i class="fas fa-map-marker-alt"></i> Location: {{ profile.location }}</p>
-            </div>
+<!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-            <!-- Profile Edit Form -->
-            <form method="POST" class="text-center">
-                {% csrf_token %}
-                
-                <!-- Render each form field with icons -->
-                <div class="form-group">
-                    <label for="id_bio" class="form-label">
-                        <i class="fas fa-pencil-alt"></i> Bio
-                    </label>
-                    {{ form.bio|add_class:"form-control" }}
-                </div>
+<!-- Include Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-                <div class="form-group mt-3">
-                    <label for="id_location" class="form-label">
-                        <i class="fas fa-map-marker-alt"></i> Location
-                    </label>
-                    {{ form.location|add_class:"form-control" }}
-                </div>
-
-                <div class="form-group mt-3">
-                    <label for="id_status" class="form-label">
-                        <i class="fas fa-graduation-cap"></i> Status
-                    </label>
-                    {{ form.status|add_class:"form-check-input" }}
-                </div>
-
-                <!-- Save Button -->
-                <button type="submit" class="btn btn-primary mt-4">
-                    <i class="fas fa-save"></i> Save Changes
-                </button>
-            </form>
+<!-- Profile Page Content -->
+<div class="container mt-5">
+    <h1 class="text-center">{{ profile.user.username }}'s Profile</h1>
+    <p class="text-muted text-center"><i class="fas fa-user-circle"></i> Bio: {{ profile.bio }}</p>
+    <p class="text-muted text-center"><i class="fas fa-map-marker-alt"></i> Location: {{ profile.location }}</p>
+    
+    <form method="POST" class="form-inline justify-content-center">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            {{ form.as_p }}
         </div>
-    </div>
+        <button type="submit" class="btn btn-primary">Save Changes <i class="fas fa-save"></i></button>
+    </form>
 </div>
 
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
 {% endblock %}
