@@ -35,6 +35,7 @@ urlpatterns = [
     path('events/', include('eventsApp.urls')),
     path('chat/', include('chatBotApp.urls')),
     path('messages/',include('messagesApp.urls')),
+    path('account/',include('profileApp.urls')),
 ]
 
 if settings.DEBUG:

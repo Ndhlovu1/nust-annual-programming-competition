@@ -1,0 +1,59 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<!-- Profile Page -->
+<div class="container my-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <!-- Profile Header -->
+            <h1 class="mb-4 text-center">
+                <i class="fas fa-user-circle"></i> {{ profile.user.username }}'s Profile
+            </h1>
+            
+            <!-- Profile Info -->
+            <div class="mb-4">
+                <p><i class="fas fa-info-circle"></i> Bio: {{ profile.bio }}</p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: {{ profile.location }}</p>
+            </div>
+
+            <!-- Profile Edit Form -->
+            <form method="POST" class="text-center">
+                {% csrf_token %}
+                
+                <!-- Render each form field with icons -->
+                <div class="form-group">
+                    <label for="id_bio" class="form-label">
+                        <i class="fas fa-pencil-alt"></i> Bio
+                    </label>
+                    {{ form.bio|add_class:"form-control" }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="id_location" class="form-label">
+                        <i class="fas fa-map-marker-alt"></i> Location
+                    </label>
+                    {{ form.location|add_class:"form-control" }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="id_status" class="form-label">
+                        <i class="fas fa-graduation-cap"></i> Status
+                    </label>
+                    {{ form.status|add_class:"form-check-input" }}
+                </div>
+
+                <!-- Save Button -->
+                <button type="submit" class="btn btn-primary mt-4">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
