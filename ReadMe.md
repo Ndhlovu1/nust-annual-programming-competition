@@ -20,13 +20,15 @@ Thank you to all contributors of this project! Your help and feedback are highly
 
 ## License
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/) license. This means you are free to:
+This software is licensed under a **Proprietary License**. The following terms apply:
 
-- **Share** — copy and redistribute the material in any medium or format
-- **Adapt** — remix, transform, and build upon the material
+- **No Redistribution**: You may not copy, share, or distribute this software in any form without explicit written permission from the author.
+- **No Modifications**: Modifying, adapting, or creating derivative works based on this software is prohibited.
+- **Commercial Use**: Any commercial use of this software requires a separate agreement with the author, including compensation terms.
+- **Attribution**: Any permitted use of the software must provide proper credit to the author in all documentation and/or promotional materials as specified by the author.
 
-However, **commercial use is not permitted** without the author's explicit permission.
+If you are interested in licensing this software for commercial purposes or have any questions regarding permissions, please contact the author directly.
 
-For more details, see the [LICENSE](LICENSE) file.
+For more information, refer to the full [License Agreement](LICENSE) included in this repository.
 
 
