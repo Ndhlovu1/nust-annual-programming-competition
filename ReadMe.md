@@ -15,6 +15,8 @@ Feel free to reach out for collaboration or any questions regarding this project
 
 **Contributors**  
 Thank you to all contributors of this project! Your help and feedback are highly valued.
+ GitHub: [@Hope Kombada](https://github.com/Bluur01)
+ GitHub: [@Vitjiukua Kaereho](https://github.com/dsaproject01)
 
 ---
 
