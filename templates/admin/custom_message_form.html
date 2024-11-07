@@ -1,0 +1,11 @@
+{# templates/admin/custom_message_form.html #}
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+  <h2>Enter a custom message to email attendees</h2>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="apply" value="Send Email" class="btn btn-primary">
+    <a href="{{ request.path }}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

@@ -14,11 +14,26 @@ class Event(models.Model):
 
     def email_attendees(self):
         attendees = self.rsvp_set.values_list('user__email', flat=True)
+        message = f"""
+        <html5>
+            <body>
+                <p>Good day,</p>
+                <p>This is your reminder to attend the</p><h5>{self.title} :</h5>
+                <br/><p><b>Date : {self.date}</b></p>
+                <p><b>Location : {self.location}</b></p>
+                <p><b>Event Details :</b> <br/>{self.description}</p>
+                
+                <br/><br/>
+                <p><b>Kindly pass all enquiries/cancellations to prg.competition@gmail.com</b></p>
+            </body>
+        </html>
+        """
         send_mail(
             subject=f"Update for {self.title}",
-            message="Good day, <br/> This is your reminder to attend the <b>{title}</b><br/><br/>{description}",
+            message=message,
             from_email="tinomudaishendhlovu@gmail.com",
             recipient_list=attendees,
+            html_message=message,
         )
 
 
