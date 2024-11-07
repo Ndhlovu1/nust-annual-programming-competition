@@ -15,15 +15,15 @@ class Event(models.Model):
     def email_attendees(self):
         attendees = self.rsvp_set.values_list('user__email', flat=True)
         message = f"""
-        <html5>
+        <html>
             <body>
-                <p>Good day,</p>
-                <p>This is your reminder to attend the</p><h5>{self.title} :</h5>
-                <br/><p><b>Date : {self.date}</b></p>
-                <p><b>Location : {self.location}</b></p>
-                <p><b>Event Details :</b> <br/>{self.description}</p>
+                <h2>Good day,</h2>
+                <h2>This is your reminder to attend the {self.title}</h2>
                 
-                <br/><br/>
+                <h2><b>Date & Time : {self.date}</b></h2>
+                <h2><b>Location : {self.location}</b></h2>
+                <h2>Event Details :</h2>
+                <p>{self.description}</p>
                 <p><b>Kindly pass all enquiries/cancellations to prg.competition@gmail.com</b></p>
             </body>
         </html>
@@ -47,3 +47,4 @@ class RSVP(models.Model):
 
     def __str__(self):
         return f"{self.user.username} RSVP for {self.event.title}"
+
