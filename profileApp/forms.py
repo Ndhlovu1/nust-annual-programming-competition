@@ -5,7 +5,17 @@ from .models import Profile
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['bio', 'location', 'status']
+        fields = [
+            'bio',
+            'location',
+            'preferred_programming_language',
+            'past_participation',
+            'cellphone_number',
+            'mentor_name',
+            'mentor_email',
+            'mentor_cellphone',
+            'status'
+        ]
         widgets = {
-            'status': forms.RadioSelect,
+            'past_participation': forms.RadioSelect,  # Display Yes/No as radio buttons
         }

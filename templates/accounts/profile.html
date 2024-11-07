@@ -1,37 +1,70 @@
 {% extends "../base.html" %}
-
 {% load static %}
+{% load custom_filters %}
+
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-<!-- Include MDBootstrap CSS and JS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
+<div class="container my-5" style="max-width: 600px;">
+    <div class="card shadow-sm" style="border-radius: 8px; overflow: hidden;">
+        <div class="card-body">
+            <h1 class="mb-4 text-center" style="font-family: 'Roboto', sans-serif;">
+                <i class="fas fa-user-circle"></i> {{ profile.user.username }}'s Profile
+            </h1>
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_bio" class="form-label"><i class="fas fa-pencil-alt"></i> Bio</label>
+                    {{ form.bio|add_class:"form-control" }}
+                </div>
+                
+                <div class="form-group mt-3">
+                    <label for="id_location" class="form-label"><i class="fas fa-map-marker-alt"></i> Location</label>
+                    {{ form.location|add_class:"form-control" }}
+                </div>
 
-<!-- Include Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <div class="form-group mt-3">
+                    <label for="id_preferred_programming_language" class="form-label"><i class="fas fa-code"></i> Preferred Programming Language</label>
+                    {{ form.preferred_programming_language|add_class:"form-control" }}
+                </div>
+                
+                <div class="form-group mt-3">
+                    <label for="id_past_participation" class="form-label"><i class="fas fa-history"></i> Past Participation</label>
+                    {{ form.past_participation }}
+                </div>
 
-<!-- Include Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+                <div class="form-group mt-3">
+                    <label for="id_cellphone_number" class="form-label"><i class="fas fa-phone"></i> Cellphone Number</label>
+                    {{ form.cellphone_number|add_class:"form-control" }}
+                </div>
 
-<!-- Profile Page Content -->
-<div class="container mt-5">
-    <h1 class="text-center">{{ profile.user.username }}'s Profile</h1>
-    <p class="text-muted text-center"><i class="fas fa-user-circle"></i> Bio: {{ profile.bio }}</p>
-    <p class="text-muted text-center"><i class="fas fa-map-marker-alt"></i> Location: {{ profile.location }}</p>
-    
-    <form method="POST" class="form-inline justify-content-center">
-        {% csrf_token %}
-        <div class="form-group mb-3">
-            {{ form.as_p }}
+                <div class="form-group mt-3">
+                    <label for="id_mentor_name" class="form-label"><i class="fas fa-user-tie"></i> Mentor's Name</label>
+                    {{ form.mentor_name|add_class:"form-control" }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="id_mentor_email" class="form-label"><i class="fas fa-envelope"></i> Mentor's Email</label>
+                    {{ form.mentor_email|add_class:"form-control" }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="id_mentor_cellphone" class="form-label"><i class="fas fa-phone"></i> Mentor's Cellphone</label>
+                    {{ form.mentor_cellphone|add_class:"form-control" }}
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="id_status" class="form-label"><i class="fas fa-graduation-cap"></i> Status</label>
+                    {{ form.status|add_class:"form-check-input" }}
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4" style="background-color: #0062cc; border: none;">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Save Changes <i class="fas fa-save"></i></button>
-    </form>
+    </div>
 </div>
-
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-</style>
 {% endblock %}
