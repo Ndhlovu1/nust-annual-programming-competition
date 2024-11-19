@@ -1,6 +1,17 @@
 # NUST PROGRAMMING COMPETION COMMUNITY
 ![logo](https://github.com/user-attachments/assets/b482a351-a2f1-47ed-9cea-1c9cf259a08a)
 
+### INSTALLATION ON LOCAL PC
+1. `pip install pipenv`
+
+2. Go to the project directory with the Pipfile and the Pipfile.lock
+
+3. Once here run the command `pipenv install`
+
+4. `pipenv shell` : Open the virtual environment
+
+5. `python -m gunicorn NPCProject.asgi:application -k uvicorn.workers.UvicornWorker` : To run the project
+
 ## Author
 
 👤 **[Tinomudaishe Ndhlovu : System Design & Implementation : Phoenix Team Lead]**
