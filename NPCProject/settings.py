@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'NPCProject.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://namibia_programming_competition_user:LBMOFeA4g4LrQsUnrsZKBk6cK3q26iv9@dpg-csg7g81u0jms738rq8f0-a.frankfurt-postgres.render.com/namibia_programming_competition',
+        default='postgresql://namibia_programming_competition_a5cu_user:1wwhDG4SG6IkHRsQMwTpJ1VBvFGq6fXj@dpg-ct65fs68ii6s73dq3i70-a.frankfurt-postgres.render.com/namibia_programming_competition_a5cu',
         conn_max_age=600
     )
 }
