@@ -106,7 +106,7 @@ WSGI_APPLICATION = 'NPCProject.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://namibia_programming_competition_a5cu_user:1wwhDG4SG6IkHRsQMwTpJ1VBvFGq6fXj@dpg-ct65fs68ii6s73dq3i70-a.frankfurt-postgres.render.com/namibia_programming_competition_a5cu',
+        default='postgresql://kings_college_kiosk_user:bgFVuJVpTlT62BUTjEnMeSIIW07lHcGh@dpg-cu0ss0d2ng1s73e2ralg-a.frankfurt-postgres.render.com/kings_college_kiosk',
         conn_max_age=600
     )
 }
@@ -182,7 +182,7 @@ ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/'
 
 # EMAIL SETUP
 ## TEST EMAIL
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ## LIVE EMAIL
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
